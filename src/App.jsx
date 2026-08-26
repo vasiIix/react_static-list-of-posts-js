@@ -7,7 +7,7 @@ import usersFromServer from './api/users.json';
 
 const posts = postsFromServer.map(post => ({
   ...post,
-  user: usersFromServer.find(us => us.id === post.userId),
+  user: usersFromServer.find(user => user.id === post.userId),
   comments:
     commentsFromServer.filter(coment => coment.postId === post.id) || null,
 }));
